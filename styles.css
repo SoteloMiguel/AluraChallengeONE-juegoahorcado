@@ -223,7 +223,7 @@ button:hover i.fa-solid{
 /* MEDIA QUERIES */
 /* *********************************** */
 
-@media (max-width: 939px) {
+@media screen and (max-width: 939px) {
 /* CUERPO DE LA PAGINA */
 main {
   width: 100%;
@@ -263,7 +263,7 @@ main section div {
 
 
 
-@media (max-width: 576px) {
+@media screen and (max-width: 576px) {
   /* HEADER */
   .header-box {
     width: 100%;
