@@ -1,0 +1,107 @@
+:root {
+  --buttonOkColor: #6dabe6;
+  --buttonOkHover: #3599f7;
+  --buttonCancelColor: #dd3333;
+  --buttonCancelHover: #ce1919;
+  --buttonBorder1: #4680b6;
+  --buttonBorder2: #feffff;
+  --buttonBorder3: #9b3636;
+}
+/*
+*{
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  overflow: hidden;
+}
+body{
+  height: 100vh;
+}*/
+
+/* Modal */
+.modal {
+  position: relative;
+  top: 25%;
+  max-width: 80%;
+  min-width: 20%;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 3px 3px 7px #525050c4;
+  background-color: #ffffff;
+  margin: 50px auto;
+}
+.modal #h2-modal{
+  margin: 1.2rem;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+  color: #595959;
+}
+.modal-btn{
+  font-size: 1rem;
+  margin: 1.5rem auto;
+  padding: 1rem;
+  width: 60%;
+  height: auto;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+}
+.modal .ok-btn{
+  background-color: var(--buttonOkColor);
+  color: #fff;
+  box-shadow: 3px 3px 3px var(--buttonBorder2),
+  inset 3px 3px 3px var(--buttonBorder1);
+  
+}
+.modal .ok-btn:hover{
+  box-shadow: 3px 3px 3px var(--buttonBorder1),
+  inset 3px 3px 3px var(--buttonBorder2);
+  /*transition: all .3s;*/
+}
+.modal .ok-btn:active {
+  box-shadow: 3px 3px 3px var(--buttonBorder2),
+  inset 3px 3px 3px var(--buttonBorder1);
+}
+.modal .cancel-btn{
+  background-color: var(--buttonCancelColor);
+  color: #fff;
+  box-shadow: 3px 3px 3px var(--buttonBorder2),
+  inset 3px 3px 3px var(--buttonBorder3);
+}
+.modal .cancel-btn:hover{
+  background-color: var(--buttonCancelHover);
+  box-shadow: 3px 3px 3px var(--buttonBorder3),
+  inset 3px 3px 3px var(--buttonBorder2);
+  /*transition: all .3s;*/
+}
+.modal .cancel-btn:active {
+  box-shadow: 3px 3px 3px var(--buttonBorder2),
+  inset 3px 3px 3px var(--buttonBorder3);
+}
+
+#input-agregoPalabra{
+  display: block;
+  margin: 15px auto;
+  width: 60%;
+  height: 2rem;
+  font-size: 1.2rem;
+  outline: none;
+  border-radius: 3px;
+  border-color: transparent transparent #6dabe6;
+  background-color: #e1effc;
+  text-transform: uppercase;
+}
+#input-agregoPalabra:active{
+  border-color: #6dabe6;
+}
+/* modal-ingresoPlabra
+*/
+#modal::backdrop {
+  background: rgba(50, 93, 133, 0.4);
+}
+#modal-p{
+  font-size: .8rem;
+  width: 60%;
+  margin: 0 auto;
+}

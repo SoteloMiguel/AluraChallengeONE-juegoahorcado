@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Juego Ahorcado">
+  <meta name="keywords" content="juego ahorcado, juego, oracle, alura latam">
+  <meta name="author" content="Miguel Angel Sotelo">
+  <meta name="copyright" content="Miguel Angel Sotelo">
+  <link rel="shortcut icon" href="./img/FaviconSeJu.svg">
+  <title>Juego Ahorcado</title>
+  <!-- Fuentes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,400;0,600;1,200;1,300&family=Roboto:ital,wght@0,300;0,500;0,700;0,900;1,400&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <!-- Estilos -->
+  <link rel="stylesheet" href="./style-reset.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <!-- <link rel="stylesheet" href="./styles/sweetalert2.min.css">-->
+  <link rel="stylesheet" href="./DialogoStyle.css">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-box">
+      <a class="header-logo" href="https://www.aluracursos.com/" target="_blank">
+        <img class="logo" src="./img/logo.svg" alt="Logotipo Alura" title="Alura Latam"></a>
+      <a class="header-text" href="https://www.aluracursos.com/" target="_blank">#challengeonejuegoahorcado3</a>
+    </div>
+  </header>
+
+  <main>
+      <h1 class="h1-title animate__animated animate__lightSpeedInLeft">Juego Ahorcado</h1>
+      
+      <section class="inicio">
+        <button id="inicio" onclick="jugar()" title="Jugar con una palabra al azar"><i class="fa-sharp fa-solid fa-circle-play"></i>Nuevo Juego</button>
+        <button id="palabra-nueva" onclick="mostrarModal('','modalAP')" title="Ingresar una palabra para jugar"><i class="fa-solid fa-keyboard"></i>Agregar palabra</button>
+      </section>
+
+      <section class="jugar">
+        <section class="section-canvas">
+          <canvas class="canvas-area"></canvas>
+        </section>    
+        <div class="palabra"></div>
+        <div class="letras-ingresadas"></div>    
+        <button id="btn-nuevo" onclick="jugar()" title="Iniciar un juego nuevo."><i class="fa-sharp fa-solid fa-circle-play"></i>Iniciar Juego</button>
+        <button id="btn-abandonar" onclick="abandonarPartida()" title="Abandonar la partida actual."><i class="fa-solid fa-keyboard"></i>Abandonar</button>
+        
+        <section class="animate__animated animate__bounceInRight" id="gameOver">
+          <p id="gameOver-p">p</p>
+          <p id="gameOver-palabra"></p>
+          <button id="gameOver-button" onclick="ocultar()">Aceptar</button>
+        </section>
+      </section>
+      
+  </main>
+
+  <dialog class="modal" id="modal-ok">
+    <h2 id="h2-modal">MODAL</h2>
+    <button class="modal-btn ok-btn" onclick = "cerrarModal('modalOK')">Aceptar</button>
+  </dialog>
+
+  <dialog class="modal" id="modal-ingresoPalabra">
+    <h2 id="h2-modal">Ingrese una nueva palabra</h2>
+    <input type="text" id="input-agregoPalabra" minlength="4" maxlength="8">
+    <p id="modal-p"><i class="fa-solid fa-circle-exclamation"></i>Solo 8 letras, sin acentos ni caracteres especiales.</p>
+    <button class="modal-btn ok-btn" onclick = "guardarPalabra()">Guardar</button>
+    <button class="modal-btn cancel-btn" onclick = "cerrarModal('modalAP')">Cancelar</button>
+  </dialog>
+
+  <dialog class="modal" id="modal-abandonar">
+    <h2 id="h2-modal">Desea Abandonar la partida <i class="fa-solid fa-circle-question"></i></h2>
+    <button class="modal-btn ok-btn" onclick = "limpiarVariables()">Abandonar</button>
+    <button class="modal-btn cancel-btn" onclick = "cerrarModal('modalAbandonar')">Cancelar</button>
+  </dialog>
+
+  <footer>
+    <p class="footer-p"><i class="fa-solid fa-copyright"></i> - Copyright Miguel Angel Sotelo</p>
+    <p class="footer-p">- #challengeonejuegoahorcado3 - 
+      <a href="https://www.linkedin.com/in/miguel-sotelo-pdas/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/SoteloMiguel?tab=repositories/" target="_blank"><i class="fa-brands fa-github"></i></a>
+    </p>
+  </footer>
+</body>
+<script src="./scripts.js"></script>
+<!--
+<script src="./scripts/sweetalert2.all.min.js"></script>
+<script src="./scripts/agregarPalabra.js"></script>
+<script src="DialogoScript.js"></script>
+-->
+
+</html>
